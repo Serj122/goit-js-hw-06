@@ -4,14 +4,20 @@ form.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
   event.preventDefault();
-  const {
-    elements: { email, password },
-  } = event.currentTarget;
+  const formRes = {
+    email: event.currentTarget.email.value,
+    password: event.currentTarget.password.value,
+  };
+  // const
+  // const
+  // const {
+  //   elements: { email, password },
+  // } = event.currentTarget;
 
-  if (email.value === "" || password.value === "") {
+  if (formRes.email === "" || formRes.password === "") {
     alert("Всі поля мають бути заповнені!");
   }
 
-  console.log(`email: ${email.value}, Password: ${password.value}`);
+  console.log(formRes);
   event.currentTarget.reset();
 }

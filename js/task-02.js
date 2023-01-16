@@ -9,8 +9,11 @@ const ingredients = [
 
 const fullMenu = document.querySelector("#ingredients");
 
-const markup = ingredients
-  .map((ingredient) => `<li class="item">${ingredient}</li>`)
-  .join("");
+const markup = ingredients.map((ingredient) => {
+  const listEl = document.createElement("li");
+  listEl.classList.add("item");
+  listEl.textContent = ingredient;
+  return listEl;
+});
 
-fullMenu.innerHTML = markup;
+fullMenu.append(...markup);
